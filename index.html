@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zilzani Abdullahi | CS Student · Entrepreneur · Consultant</title>
+<meta name="description" content="Zilzani Abdullahi – Computer Science student, entrepreneur, business consultant and educator from Nigeria. Passionate about technology and digital transformation."/>
+<meta name="keywords" content="Zilzani Abdullahi, Computer Science, Entrepreneur, Business Consultant, Nigeria, ABU Zaria"/>
+<meta property="og:title" content="Zilzani Abdullahi | Portfolio"/>
+<meta property="og:description" content="Building Solutions Through Technology and Innovation."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ─── VARIABLES ─────────────────────────────────────────── */
+:root {
+  --navy:     #0a1628;
+  --navy2:    #0f2044;
+  --navy3:    #152b5e;
+  --gold:     #c9a227;
+  --gold2:    #e8c04a;
+  --gold3:    #f5d97a;
+  --white:    #f8f9fc;
+  --gray:     #8899b4;
+  --gray2:    #b0bfd4;
+  --card:     #0e1e3a;
+  --border:   rgba(201,162,39,.18);
+  --shadow:   0 8px 40px rgba(0,0,0,.45);
+  --radius:   16px;
+  --font-h:   'Playfair Display', serif;
+  --font-b:   'DM Sans', sans-serif;
+  --font-m:   'DM Mono', monospace;
+  --trans:    .35s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"] {
+  --navy:     #f0f4ff;
+  --navy2:    #e2e9f8;
+  --navy3:    #cbd5ef;
+  --white:    #0a1628;
+  --gray:     #4a5880;
+  --gray2:    #2d3d60;
+  --card:     #ffffff;
+  --border:   rgba(201,162,39,.28);
+  --shadow:   0 8px 40px rgba(10,22,40,.12);
+}
+
+/* ─── RESET ────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-b);background:var(--navy);color:var(--white);line-height:1.7;overflow-x:hidden;transition:background var(--trans),color var(--trans)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy2)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+
+/* ─── NOISE OVERLAY ─────────────────────────────────────── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── UTILITY ───────────────────────────────────────────── */
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
+.section{padding:100px 0}
+.gold{color:var(--gold)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-family:var(--font-m);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(201,162,39,.1);border:1px solid var(--border);border-radius:99px;padding:4px 14px;margin-bottom:16px}
+.section-title{font-family:var(--font-h);font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px;line-height:1.2}
+.section-sub{color:var(--gray2);max-width:540px;margin-bottom:56px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:99px;font-weight:600;font-size:.95rem;cursor:pointer;transition:all var(--trans);border:2px solid transparent;white-space:nowrap}
+.btn-gold{background:var(--gold);color:#0a1628;border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,162,39,.4)}
+.btn-outline{background:transparent;color:var(--gold);border-color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:#0a1628;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,162,39,.3)}
+
+/* ─── FADE-IN ANIMATION ─────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:none}
+
+/* ─── NAVBAR ────────────────────────────────────────────── */
+#navbar{position:fixed;top:0;width:100%;z-index:1000;padding:18px 0;transition:all var(--trans)}
+#navbar.scrolled{background:rgba(10,22,40,.92);backdrop-filter:blur(18px);padding:12px 0;box-shadow:0 4px 24px rgba(0,0,0,.3)}
+[data-theme="light"] #navbar.scrolled{background:rgba(240,244,255,.92)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-h);font-size:1.4rem;font-weight:900}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--gray2);transition:color var(--trans);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width var(--trans)}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.theme-toggle{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--trans);font-size:1rem}
+.theme-toggle:hover{background:rgba(201,162,39,.12)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:99px;transition:all var(--trans)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--navy2);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-h);font-size:2rem;color:var(--white);transition:color var(--trans)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:24px;right:28px;font-size:1.8rem;cursor:pointer;color:var(--gray)}
+
+/* ─── HERO ──────────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-circle{position:absolute;border-radius:50%;filter:blur(100px);opacity:.18}
+.hero-bg-circle.c1{width:600px;height:600px;background:var(--gold);top:-200px;right:-200px}
+.hero-bg-circle.c2{width:400px;height:400px;background:#1e4080;bottom:-100px;left:-100px}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-tag{margin-bottom:20px;animation:fadeDown .8s ease both}
+.hero-name{font-family:var(--font-h);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:16px;animation:fadeDown .8s .1s ease both}
+.hero-name em{font-style:normal;color:var(--gold)}
+.hero-roles{font-family:var(--font-m);font-size:.85rem;color:var(--gold2);letter-spacing:.12em;margin-bottom:24px;animation:fadeDown .8s .2s ease both}
+.hero-intro{color:var(--gray2);font-size:1.05rem;max-width:520px;margin-bottom:36px;animation:fadeDown .8s .3s ease both}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;animation:fadeDown .8s .4s ease both}
+.hero-stats{display:flex;gap:36px;margin-top:44px;animation:fadeDown .8s .5s ease both}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--font-h);font-size:2rem;font-weight:900;color:var(--gold)}
+.hero-stat-label{font-size:.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:.08em}
+.hero-img-wrap{position:relative;animation:fadeLeft .9s .2s ease both}
+.hero-img-frame{width:100%;aspect-ratio:3/4;border-radius:24px;overflow:hidden;border:2px solid var(--border);position:relative;background:linear-gradient(145deg,var(--navy2),var(--navy3))}
+.hero-avatar{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:7rem;color:var(--gold);background:linear-gradient(145deg,var(--navy2),var(--navy3))}
+.hero-badge{position:absolute;bottom:-20px;left:-20px;background:var(--gold);color:#0a1628;border-radius:16px;padding:16px 20px;font-weight:700;font-size:.85rem;box-shadow:0 8px 28px rgba(201,162,39,.4);line-height:1.4}
+.hero-badge small{display:block;font-weight:400;font-size:.75rem;opacity:.8}
+.hero-deco{position:absolute;top:30px;right:-20px;width:80px;height:80px;border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.6rem}
+
+/* ─── ABOUT ─────────────────────────────────────────────── */
+#about{background:var(--navy2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img{position:relative}
+.about-img-frame{border-radius:24px;overflow:hidden;border:2px solid var(--border);aspect-ratio:4/5;background:linear-gradient(145deg,var(--navy),var(--navy3));display:flex;align-items:center;justify-content:center;font-size:6rem;color:var(--gold)}
+.about-deco-box{position:absolute;top:-24px;right:-24px;width:120px;height:120px;border:2px solid var(--gold);border-radius:16px;z-index:-1;opacity:.4}
+.about-deco-box2{position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;background:var(--gold);border-radius:12px;opacity:.12;z-index:-1}
+.about-text p{color:var(--gray2);margin-bottom:18px;font-size:1.05rem}
+.about-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:rgba(201,162,39,.1);border:1px solid var(--border);border-radius:99px;padding:6px 18px;font-size:.85rem;color:var(--gold2);font-family:var(--font-m)}
+
+/* ─── EDUCATION ─────────────────────────────────────────── */
+.edu-grid{display:grid;gap:24px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;display:flex;gap:24px;align-items:flex-start;transition:all var(--trans);position:relative;overflow:hidden}
+.edu-card::before{content:'';position:absolute;left:0;top:0;height:100%;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform var(--trans)}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.edu-card:hover::before{transform:scaleY(1)}
+.edu-icon{width:52px;height:52px;border-radius:12px;background:rgba(201,162,39,.12);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem;flex-shrink:0}
+.edu-body h3{font-family:var(--font-h);font-size:1.15rem;margin-bottom:4px}
+.edu-body .degree{color:var(--gold);font-weight:600;font-size:.95rem;margin-bottom:4px}
+.edu-body .years{font-family:var(--font-m);font-size:.8rem;color:var(--gray);display:flex;align-items:center;gap:6px}
+.edu-badge{margin-left:auto;font-size:.75rem;background:rgba(201,162,39,.1);color:var(--gold2);border:1px solid var(--border);border-radius:99px;padding:4px 12px;white-space:nowrap;flex-shrink:0;align-self:center;font-family:var(--font-m)}
+
+/* ─── EXPERIENCE ────────────────────────────────────────── */
+#experience{background:var(--navy2)}
+.exp-timeline{position:relative;padding-left:32px}
+.exp-timeline::before{content:'';position:absolute;left:0;top:0;height:100%;width:2px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.exp-item{position:relative;padding-bottom:48px}
+.exp-item:last-child{padding-bottom:0}
+.exp-dot{position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.2)}
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;transition:all var(--trans)}
+.exp-card:hover{transform:translateX(6px);box-shadow:var(--shadow)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.exp-title{font-family:var(--font-h);font-size:1.25rem;color:var(--white)}
+.exp-company{color:var(--gold);font-weight:600;font-size:.95rem;margin-top:2px}
+.exp-period{font-family:var(--font-m);font-size:.8rem;color:var(--gray);background:rgba(201,162,39,.08);border:1px solid var(--border);padding:4px 12px;border-radius:99px}
+.exp-list{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.exp-list li{color:var(--gray2);font-size:.95rem;display:flex;align-items:flex-start;gap:10px}
+.exp-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+
+/* ─── SKILLS ────────────────────────────────────────────── */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.skills-col h3{font-family:var(--font-h);font-size:1.4rem;margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.skills-col h3 i{color:var(--gold)}
+.skill-item{margin-bottom:20px}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.9rem;font-weight:500}
+.skill-top span:last-child{font-family:var(--font-m);color:var(--gold);font-size:.8rem}
+.skill-bar{height:6px;background:rgba(201,162,39,.15);border-radius:99px;overflow:hidden}
+.skill-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold3));border-radius:99px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.soft-pills{display:flex;flex-wrap:wrap;gap:12px}
+.soft-pill{background:var(--card);border:1px solid var(--border);border-radius:99px;padding:10px 20px;font-size:.9rem;color:var(--gray2);display:flex;align-items:center;gap:8px;transition:all var(--trans)}
+.soft-pill:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.soft-pill i{color:var(--gold);font-size:.85rem}
+
+/* ─── PROJECTS ──────────────────────────────────────────── */
+#projects{background:var(--navy2)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--trans);display:flex;flex-direction:column}
+.proj-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.proj-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden}
+.proj-img.p1{background:linear-gradient(135deg,#0f2044,#1a3a70)}
+.proj-img.p2{background:linear-gradient(135deg,#0a1628,#1e4080)}
+.proj-img.p3{background:linear-gradient(135deg,#111,#1a3a70)}
+.proj-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,var(--card))}
+.proj-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.proj-tag{font-family:var(--font-m);font-size:.72rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.proj-body h3{font-family:var(--font-h);font-size:1.15rem;margin-bottom:10px}
+.proj-body p{color:var(--gray2);font-size:.92rem;flex:1}
+.proj-links{margin-top:18px;display:flex;gap:12px}
+.proj-link{font-size:.85rem;color:var(--gold);border:1px solid var(--border);border-radius:99px;padding:6px 16px;transition:all var(--trans)}
+.proj-link:hover{background:var(--gold);color:#0a1628}
+
+/* ─── INTERESTS ─────────────────────────────────────────── */
+.interests-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.interest-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;text-align:center;width:160px;transition:all var(--trans)}
+.interest-card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:var(--shadow)}
+.interest-icon{font-size:2.2rem;color:var(--gold);margin-bottom:14px;display:block}
+.interest-card p{font-size:.9rem;color:var(--gray2)}
+
+/* ─── STATS COUNTER ─────────────────────────────────────── */
+#stats{background:var(--gold);color:#0a1628;padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat-item h3{font-family:var(--font-h);font-size:3rem;font-weight:900}
+.stat-item p{font-size:.85rem;font-weight:600;opacity:.75;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+
+/* ─── BLOG ──────────────────────────────────────────────── */
+#blog{background:var(--navy)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--trans)}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.blog-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.blog-img.b1{background:linear-gradient(135deg,#0f2044,#1a3a70)}
+.blog-img.b2{background:linear-gradient(135deg,#111,#1e3a5f)}
+.blog-img.b3{background:linear-gradient(135deg,#0a1628,#152b5e)}
+.blog-body{padding:24px}
+.blog-meta{font-family:var(--font-m);font-size:.75rem;color:var(--gold);margin-bottom:10px}
+.blog-body h3{font-family:var(--font-h);font-size:1.1rem;margin-bottom:10px}
+.blog-body p{color:var(--gray2);font-size:.9rem}
+.blog-more{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:.88rem;margin-top:14px;font-weight:500;transition:gap var(--trans)}
+.blog-more:hover{gap:10px}
+
+/* ─── TESTIMONIALS ──────────────────────────────────────── */
+#testimonials{background:var(--navy2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;position:relative;transition:all var(--trans)}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.testi-quote{font-size:3rem;color:var(--gold);opacity:.3;line-height:1;margin-bottom:12px;font-family:var(--font-h)}
+.testi-text{color:var(--gray2);font-size:.95rem;font-style:italic;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:14px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:rgba(201,162,39,.15);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1rem;font-family:var(--font-h);flex-shrink:0}
+.testi-name{font-weight:600;font-size:.95rem}
+.testi-role{font-size:.8rem;color:var(--gray);font-family:var(--font-m)}
+.testi-stars{color:var(--gold);font-size:.8rem;margin-top:4px}
+
+/* ─── CONTACT ───────────────────────────────────────────── */
+#contact{background:var(--navy)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;align-items:flex-start;gap:18px}
+.contact-icon{width:48px;height:48px;border-radius:12px;background:rgba(201,162,39,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex-shrink:0}
+.contact-detail strong{display:block;font-size:.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-m);margin-bottom:4px}
+.contact-detail a,.contact-detail span{color:var(--gray2);font-size:.95rem;transition:color var(--trans)}
+.contact-detail a:hover{color:var(--gold)}
+.contact-social{display:flex;gap:14px;margin-top:8px}
+.social-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray2);font-size:.95rem;transition:all var(--trans)}
+.social-btn:hover{background:var(--gold);color:#0a1628;border-color:var(--gold);transform:translateY(-2px)}
+.contact-form{display:flex;flex-direction:column;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-size:.85rem;font-weight:500;color:var(--gray2);font-family:var(--font-m);letter-spacing:.05em}
+.form-group input,.form-group textarea,.form-group select{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--white);font-family:var(--font-b);font-size:.95rem;outline:none;transition:border-color var(--trans);resize:vertical}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{background:var(--gold);color:#0a1628;border:none;border-radius:99px;padding:14px 36px;font-weight:700;font-size:1rem;cursor:pointer;transition:all var(--trans);display:flex;align-items:center;gap:10px;align-self:flex-start}
+.form-submit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,162,39,.4)}
+.map-frame{margin-top:24px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);height:220px}
+.map-frame iframe{width:100%;height:100%;border:none}
+
+/* ─── WHATSAPP FLOAT ────────────────────────────────────── */
+#wa-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.wa-btn{width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:all var(--trans);cursor:pointer}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.6)}
+.wa-tooltip{background:var(--navy2);color:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px 16px;font-size:.85rem;white-space:nowrap;display:none;margin-bottom:4px}
+#wa-float:hover .wa-tooltip{display:block}
+
+/* ─── FOOTER ────────────────────────────────────────────── */
+footer{background:var(--navy2);border-top:1px solid var(--border);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .logo{font-family:var(--font-h);font-size:1.5rem;font-weight:900;margin-bottom:12px}
+.footer-brand .logo span{color:var(--gold)}
+.footer-brand p{color:var(--gray2);font-size:.9rem;max-width:260px}
+.footer-brand .tagline{font-style:italic;color:var(--gold);margin-top:12px;font-size:.9rem}
+.footer-col h4{font-family:var(--font-m);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{color:var(--gray2);font-size:.9rem;transition:color var(--trans)}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.85rem;color:var(--gray)}
+.footer-socials{display:flex;gap:12px}
+
+/* ─── KEYFRAMES ─────────────────────────────────────────── */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:none}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-anim{animation:float 5s ease-in-out infinite}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-img-wrap{order:-1;max-width:300px;margin:0 auto}
+  .hero-intro{margin:0 auto 36px}
+  .hero-btns{justify-content:center}
+  .hero-stats{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .about-img{max-width:360px;margin:0 auto}
+  .skills-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .projects-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .section{padding:72px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#hero">Zilzani<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <a href="#contact" class="btn btn-gold" style="padding:10px 22px;font-size:.85rem">Hire Me</a>
+      <div class="hamburger" id="menuBtn"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" id="menuClose"><i class="fas fa-times"></i></span>
+  <a href="#about" class="menu-link">About</a>
+  <a href="#education" class="menu-link">Education</a>
+  <a href="#experience" class="menu-link">Experience</a>
+  <a href="#skills" class="menu-link">Skills</a>
+  <a href="#projects" class="menu-link">Projects</a>
+  <a href="#contact" class="menu-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-circle c1"></div>
+    <div class="hero-bg-circle c2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-tag tag"><i class="fas fa-map-marker-alt"></i> Tsafe, Zamfara State, Nigeria</div>
+        <h1 class="hero-name">Zilzani<br/><em>Abdullahi</em></h1>
+        <p class="hero-roles">Computer Science Student &nbsp;·&nbsp; Entrepreneur &nbsp;·&nbsp; Business Consultant &nbsp;·&nbsp; Technology Enthusiast</p>
+        <p class="hero-intro">A highly motivated professional with experience in education, business development, supply chain management, and technology. Passionate about innovation, entrepreneurship, and digital transformation.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-gold" onclick="downloadCV()"><i class="fas fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="5">0</div>
+            <div class="hero-stat-label">Years Exp.</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="3">0</div>
+            <div class="hero-stat-label">Projects</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="3">0</div>
+            <div class="hero-stat-label">Roles Held</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="2">0</div>
+            <div class="hero-stat-label">Degrees</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img-wrap float-anim">
+        <div class="hero-img-frame">
+          <div class="hero-avatar"><i class="fas fa-user-tie"></i></div>
+        </div>
+        <div class="hero-badge">
+          <span>🎓 MSc AI</span>
+          <small>ABU Zaria · 2025–date</small>
+        </div>
+        <div class="hero-deco"><i class="fas fa-code"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal-left">
+        <div class="about-img-frame"><i class="fas fa-user-graduate"></i></div>
+        <div class="about-deco-box"></div>
+        <div class="about-deco-box2"></div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="tag"><i class="fas fa-info-circle"></i> About Me</div>
+        <h2 class="section-title">A Multidisciplinary<br/><span class="gold">Professional</span></h2>
+        <p>I am currently studying BSc Computer Science at Ahmadu Bello University, Zaria, alongside pursuing a Masters in Artificial Intelligence at the same institution. My background combines education, business management, logistics coordination, and technology.</p>
+        <p>I enjoy solving problems, building digital solutions, and helping organizations grow through innovation and strategic planning. My journey spans from the classroom as a teacher to boardrooms as a business consultant and entrepreneur.</p>
+        <p>I am driven by a belief that technology and innovation can transform communities, and I am committed to making that transformation happen in Nigeria and beyond.</p>
+        <div class="about-pills">
+          <span class="pill">🎓 CS Student</span>
+          <span class="pill">💼 Entrepreneur</span>
+          <span class="pill">📊 Consultant</span>
+          <span class="pill">🏫 Educator</span>
+          <span class="pill">🤖 AI Enthusiast</span>
+          <span class="pill">🚚 Supply Chain</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-graduation-cap"></i> Education</div>
+    <h2 class="section-title reveal">Academic <span class="gold">Journey</span></h2>
+    <p class="section-sub reveal">A strong academic foundation spanning primary school through postgraduate studies.</p>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-brain"></i></div>
+        <div class="edu-body">
+          <h3>Ahmadu Bello University, Zaria</h3>
+          <div class="degree">Masters in Artificial Intelligence</div>
+          <div class="years"><i class="far fa-calendar"></i> 2025 – Present</div>
+        </div>
+        <div class="edu-badge">Postgraduate</div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="edu-body">
+          <h3>Ahmadu Bello University, Zaria</h3>
+          <div class="degree">BSc Computer Science</div>
+          <div class="years"><i class="far fa-calendar"></i> 2020 – 2025</div>
+        </div>
+        <div class="edu-badge">Undergraduate</div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div class="edu-body">
+          <h3>Zamfara State College of Education, Maru</h3>
+          <div class="degree">NCE – Geography & Social Studies</div>
+          <div class="years"><i class="far fa-calendar"></i> 2011 – 2014</div>
+        </div>
+        <div class="edu-badge">NCE</div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-school"></i></div>
+        <div class="edu-body">
+          <h3>Government Day Secondary School, Tsafe</h3>
+          <div class="degree">Senior Secondary Certificate</div>
+          <div class="years"><i class="far fa-calendar"></i> 2005 – 2011</div>
+        </div>
+        <div class="edu-badge">Secondary</div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-child"></i></div>
+        <div class="edu-body">
+          <h3>Mazawaje Model Primary School, Tsafe</h3>
+          <div class="degree">Primary School Certificate</div>
+          <div class="years"><i class="far fa-calendar"></i> 1999 – 2005</div>
+        </div>
+        <div class="edu-badge">Primary</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-briefcase"></i> Experience</div>
+    <h2 class="section-title reveal">Professional <span class="gold">Timeline</span></h2>
+    <p class="section-sub reveal">Years of diverse experience across education, business, and technology sectors.</p>
+    <div class="exp-timeline">
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Teacher</div>
+              <div class="exp-company">Government Day Secondary School (GDSS), Yandoton Daji</div>
+            </div>
+            <div class="exp-period">2013 – 2014</div>
+          </div>
+          <ul class="exp-list">
+            <li>Taught Geography and Social Studies to secondary school students</li>
+            <li>Developed comprehensive lesson plans aligned with the national curriculum</li>
+            <li>Mentored students on academic and personal development</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Sales & Supply Coordinator</div>
+              <div class="exp-company">Relaise International Limited</div>
+            </div>
+            <div class="exp-period">2017 – 2019</div>
+          </div>
+          <ul class="exp-list">
+            <li>Managed supply chain operations and product distribution networks</li>
+            <li>Maintained strong client relationships and ensured customer satisfaction</li>
+            <li>Coordinated logistics and streamlined delivery processes</li>
+            <li>Monitored inventory and coordinated with vendors for timely procurement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Entrepreneur & Business Consultant</div>
+              <div class="exp-company">Independent – Multiple Projects</div>
+            </div>
+            <div class="exp-period">2019 – Present</div>
+          </div>
+          <p style="color:var(--gray2);font-size:.92rem;margin-bottom:10px"><strong style="color:var(--gold2)">Projects:</strong> Diesel Supply Operations · Rural Electricity Agency (REA), Abuja · Hotel Supply & Business Support Services</p>
+          <ul class="exp-list">
+            <li>Managed procurement processes and contract negotiations with key stakeholders</li>
+            <li>Oversaw inventory management and ensured optimal stock levels</li>
+            <li>Led business development initiatives, identifying new revenue opportunities</li>
+            <li>Provided strategic consulting to organizations seeking operational improvement</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-cogs"></i> Skills</div>
+    <h2 class="section-title reveal">My <span class="gold">Expertise</span></h2>
+    <p class="section-sub reveal">A blend of technical and professional skills built through years of practice and continuous learning.</p>
+    <div class="skills-grid">
+      <div class="skills-col reveal-left">
+        <h3><i class="fas fa-code"></i> Technical Skills</h3>
+        <div class="skill-item">
+          <div class="skill-top"><span>Computer Applications</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>Web Technologies</span><span>78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>Mobile App Development</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>IT Support & Troubleshooting</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>Digital Tools & Productivity</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+      </div>
+      <div class="skills-col reveal-right">
+        <h3><i class="fas fa-handshake"></i> Professional Skills</h3>
+        <div class="soft-pills">
+          <div class="soft-pill"><i class="fas fa-chart-line"></i> Business Development</div>
+          <div class="soft-pill"><i class="fas fa-truck"></i> Supply Chain Management</div>
+          <div class="soft-pill"><i class="fas fa-comments"></i> Communication</div>
+          <div class="soft-pill"><i class="fas fa-users"></i> Leadership</div>
+          <div class="soft-pill"><i class="fas fa-puzzle-piece"></i> Problem Solving</div>
+          <div class="soft-pill"><i class="fas fa-tasks"></i> Project Coordination</div>
+          <div class="soft-pill"><i class="fas fa-file-contract"></i> Contract Negotiation</div>
+          <div class="soft-pill"><i class="fas fa-boxes"></i> Inventory Management</div>
+          <div class="soft-pill"><i class="fas fa-chalkboard-teacher"></i> Teaching & Mentoring</div>
+          <div class="soft-pill"><i class="fas fa-lightbulb"></i> Strategic Planning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <h3 class="counter" data-count="10">0</h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 class="counter" data-count="3">0</h3>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 class="counter" data-count="5">0</h3>
+        <p>Qualifications</p>
+      </div>
+      <div class="stat-item reveal">
+        <h3 class="counter" data-count="100">0</h3>
+        <p>Students Mentored</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-rocket"></i> Projects</div>
+    <h2 class="section-title reveal">Featured <span class="gold">Work</span></h2>
+    <p class="section-sub reveal">Digital solutions built to solve real-world challenges across industries.</p>
+    <div class="projects-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-img p1">🍔</div>
+        <div class="proj-body">
+          <div class="proj-tag">Mobile Application</div>
+          <h3>Maiduguri Kitchen App</h3>
+          <p>A food delivery mobile application connecting customers with local food vendors in Maiduguri. Simplifying food ordering and supporting local businesses through technology.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-img p2">🏫</div>
+        <div class="proj-body">
+          <div class="proj-tag">Web Platform</div>
+          <h3>School Management Website</h3>
+          <p>A comprehensive digital platform for managing students, teachers, attendance records, and academic performance — modernizing administration for Nigerian schools.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-img p3">💼</div>
+        <div class="proj-body">
+          <div class="proj-tag">Portfolio Website</div>
+          <h3>Personal Portfolio Website</h3>
+          <p>A professional online presence showcasing skills, education, career experience, and projects — designed to leave a lasting impression on clients and employers.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="proj-link"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests" class="section" style="background:var(--navy2)">
+  <div class="container" style="text-align:center">
+    <div class="tag reveal" style="display:inline-flex"><i class="fas fa-heart"></i> Interests</div>
+    <h2 class="section-title reveal">What I'm <span class="gold">Passionate About</span></h2>
+    <p class="section-sub reveal" style="margin:0 auto 56px">Beyond work, these are the areas that fuel my curiosity and drive.</p>
+    <div class="interests-grid">
+      <div class="interest-card reveal">
+        <span class="interest-icon">💡</span>
+        <p>Technology &amp; Innovation</p>
+      </div>
+      <div class="interest-card reveal">
+        <span class="interest-icon">📈</span>
+        <p>Business Development</p>
+      </div>
+      <div class="interest-card reveal">
+        <span class="interest-icon">🚀</span>
+        <p>Entrepreneurship</p>
+      </div>
+      <div class="interest-card reveal">
+        <span class="interest-icon">✈️</span>
+        <p>Travelling</p>
+      </div>
+      <div class="interest-card reveal">
+        <span class="interest-icon">📚</span>
+        <p>Education</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-quote-left"></i> Testimonials</div>
+    <h2 class="section-title reveal">What People <span class="gold">Say</span></h2>
+    <p class="section-sub reveal">Feedback from colleagues, clients, and students who have worked with me.</p>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Zilzani brought an incredible level of dedication and creativity to our supply chain operations. His coordination skills are outstanding, and he always delivers results beyond expectations.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Abubakar Musa</div>
+            <div class="testi-role">Manager, Relaise International</div>
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">As a teacher, Zilzani had a remarkable ability to connect with students and make complex subjects like Geography easy to understand. A true mentor and role model.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">F</div>
+          <div>
+            <div class="testi-name">Fatima Yusuf</div>
+            <div class="testi-role">Former Student, GDSS</div>
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Zilzani's entrepreneurial mindset and problem-solving approach made a real difference in our project at REA. He understands both the business and technology sides of any challenge.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">I</div>
+          <div>
+            <div class="testi-name">Ibrahim Suleiman</div>
+            <div class="testi-role">Project Officer, REA Abuja</div>
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-pen-nib"></i> Blog</div>
+    <h2 class="section-title reveal">Latest <span class="gold">Thoughts</span></h2>
+    <p class="section-sub reveal">Ideas on technology, business, and innovation in Nigeria and beyond.</p>
+    <div class="blog-grid">
+
+      <div class="blog-card reveal">
+        <div class="blog-img b1">🤖</div>
+        <div class="blog-body">
+          <div class="blog-meta"><i class="far fa-calendar"></i> January 2026 &nbsp;·&nbsp; Technology</div>
+          <h3>How AI is Transforming Small Businesses in Nigeria</h3>
+          <p>Exploring how artificial intelligence tools are being adopted by Nigerian entrepreneurs to improve efficiency, cut costs, and compete globally.</p>
+          <a href="#" class="blog-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img b2">🚀</div>
+        <div class="blog-body">
+          <div class="blog-meta"><i class="far fa-calendar"></i> March 2026 &nbsp;·&nbsp; Entrepreneurship</div>
+          <h3>5 Lessons I Learned Running a Supply Business in Zamfara</h3>
+          <p>From logistics coordination to contract negotiation — the real lessons from the ground that no textbook teaches you about entrepreneurship in northern Nigeria.</p>
+          <a href="#" class="blog-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img b3">📱</div>
+        <div class="blog-body">
+          <div class="blog-meta"><i class="far fa-calendar"></i> May 2026 &nbsp;·&nbsp; Tech &amp; Education</div>
+          <h3>Building Digital Tools for Nigerian Schools: Where to Start</h3>
+          <p>A practical guide for developers and education stakeholders on designing school management solutions that work for the unique realities of Nigerian institutions.</p>
+          <a href="#" class="blog-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" style="background:var(--navy2)">
+  <div class="container">
+    <div class="tag reveal"><i class="fas fa-paper-plane"></i> Contact</div>
+    <h2 class="section-title reveal">Get In <span class="gold">Touch</span></h2>
+    <p class="section-sub reveal">Have a project, collaboration, or just want to say hello? I'd love to hear from you.</p>
+    <div class="contact-grid">
+
+      <div class="contact-info reveal-left">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-detail">
+            <strong>Email</strong>
+            <a href="mailto:zilzaniabdullahitsafe@gmail.com">zilzaniabdullahitsafe@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-detail">
+            <strong>Phone</strong>
+            <a href="tel:+2348034572682">08034572682</a><br/>
+            <a href="tel:+2348065313589">08065313589</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-detail">
+            <strong>Location</strong>
+            <span>Tsafe, Zamfara State, Nigeria</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-detail">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/2348034572682" target="_blank">Click to Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <strong style="font-size:.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-m);display:block;margin-bottom:14px">Social Media</strong>
+          <div class="contact-social">
+            <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-btn" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/2348034572682" class="social-btn" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://maps.google.com/maps?q=Tsafe,Zamfara,Nigeria&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map"></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form reveal-right">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com"/>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Project Collaboration / Inquiry"/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="6" placeholder="Hello Zilzani, I'd like to discuss..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div id="form-msg" style="display:none;color:var(--gold);margin-top:10px;font-size:.9rem"><i class="fas fa-check-circle"></i> Message sent! I'll get back to you shortly.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand reveal">
+        <div class="logo">Zilzani<span>.</span></div>
+        <p>Computer Science student, entrepreneur, and business consultant passionate about technology and innovation.</p>
+        <div class="tagline">"Building Solutions Through Technology and Innovation."</div>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col reveal">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:zilzaniabdullahitsafe@gmail.com"><i class="fas fa-envelope" style="color:var(--gold);width:18px"></i> Email Me</a></li>
+          <li><a href="https://wa.me/2348034572682" target="_blank"><i class="fab fa-whatsapp" style="color:var(--gold);width:18px"></i> WhatsApp</a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in" style="color:var(--gold);width:18px"></i> LinkedIn</a></li>
+          <li><a href="#"><i class="fab fa-github" style="color:var(--gold);width:18px"></i> GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Zilzani Abdullahi. All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/2348034572682" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div id="wa-float">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <a href="https://wa.me/2348034572682" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<script>
+// ─── THEME TOGGLE
+const themeBtn = document.getElementById('themeBtn');
+const html = document.documentElement;
+let dark = true;
+themeBtn.addEventListener('click', () => {
+  dark = !dark;
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeBtn.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
+
+// ─── NAVBAR SCROLL
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ─── MOBILE MENU
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ─── SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+reveals.forEach(el => revealObs.observe(el));
+
+// ─── SKILL BARS
+const bars = document.querySelectorAll('.skill-fill');
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.style.width = e.target.dataset.width + '%';
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+bars.forEach(b => barObs.observe(b));
+
+// ─── COUNTER ANIMATION
+function animateCounter(el) {
+  const target = +el.dataset.count;
+  const dur = 1800;
+  const step = target / (dur / 16);
+  let cur = 0;
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = Math.floor(cur) + (target >= 100 ? '+' : '');
+    if(cur >= target) clearInterval(t);
+  }, 16);
+}
+const counters = document.querySelectorAll('.counter, [data-count]');
+const cntObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { animateCounter(e.target); cntObs.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cntObs.observe(c));
+
+// ─── FORM SUBMIT
+function handleSubmit(e) {
+  e.preventDefault ? e.preventDefault() : null;
+  const msg = document.getElementById('form-msg');
+  msg.style.display = 'block';
+  setTimeout(() => msg.style.display = 'none', 5000);
+}
+
+// ─── DOWNLOAD CV
+function downloadCV() {
+  alert('CV download will be available once linked to the actual file. Please contact via email for the latest CV.');
+}
+
+// ─── ACTIVE NAV LINK ON SCROLL
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 120) cur = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
+  });
+});
+</script>
+</body>
+</html>
